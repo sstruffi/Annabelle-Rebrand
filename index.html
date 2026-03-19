@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annabelle Rebrand - Sara Truffi Portfolio</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #fcfaf5;
+        font-family: Arial, sans-serif;
+        color: #5a3b4d;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      nav ul {
+        list-style: none;
+      }
+
+      nav ul li {
+        display: inline-block;
+        position: relative;
+        margin-right: 20px;
+      }
+
+      nav a {
+        text-decoration: none;
+        font-family: "Open Sans", sans-serif;
+        font-size: 18px;
+        color: #d14f9c;
+        padding: 6px 10px;
+        display: block;
+        transition: all 0.2s ease;
+      }
+
+      nav a:hover {
+        color: #ffb6db;
+      }
+
+      nav a:active {
+        color: #aa2f79;
+      }
+
+      nav a:visited {
+        color: #c6428f;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #ffffff;
+        min-width: 200px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        overflow: hidden;
+        z-index: 1000;
+      }
+
+      .dropdown-content li {
+        display: block;
+        margin: 0;
+      }
+
+      .dropdown-content a {
+        padding: 12px 16px;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #eeeeee;
+        color: #ffb6db;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .hero {
+        padding: 55px 0 30px;
+        text-align: center;
+      }
+
+      .eyebrow {
+        font-size: 0.85em;
+        text-transform: uppercase;
+        letter-spacing: 1.6px;
+        color: #b87aa0;
+        margin-bottom: 12px;
+      }
+
+      .hero h1 {
+        font-size: 3em;
+        line-height: 1.1;
+        color: #d14f9c;
+        margin-bottom: 16px;
+      }
+
+      .hero p {
+        max-width: 760px;
+        margin: 0 auto;
+        line-height: 1.8;
+        color: #7a5d6d;
+        font-size: 1.05em;
+      }
+
+      .hero-image {
+        width: 100%;
+        display: block;
+        margin-top: 30px;
+        border-radius: 14px;
+      }
+
+      .meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 24px;
+      }
+
+      .meta-row span {
+        background: #fff0f7;
+        color: #d14f9c;
+        padding: 8px 14px;
+        border-radius: 30px;
+        font-size: 0.85em;
+        border: 1px solid #f3d6e6;
+      }
+
+      .section {
+        margin-top: 85px;
+      }
+
+      .section-inner {
+        max-width: 760px;
+        margin: 0 auto;
+      }
+
+      .section h2 {
+        color: #d14f9c;
+        font-size: 2em;
+        margin-bottom: 10px;
+      }
+
+      .divider {
+        width: 42px;
+        height: 2px;
+        background: #d14f9c;
+        margin-bottom: 22px;
+      }
+
+      .section p {
+        line-height: 1.85;
+        color: #6d5c67;
+        margin-bottom: 18px;
+        font-size: 1.04em;
+      }
+
+      .highlight {
+        color: #c6428f;
+        font-style: italic;
+        margin: 18px 0 6px;
+      }
+
+      .role-block {
+        margin-top: 24px;
+        padding-top: 18px;
+        border-top: 1px solid #edd9e5;
+      }
+
+      .role-block strong {
+        color: #c6428f;
+      }
+
+      .two-column {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+        align-items: start;
+        max-width: 950px;
+        margin: 0 auto;
+      }
+
+      .two-column h2 {
+        color: #d14f9c;
+        font-size: 1.8em;
+        margin-bottom: 10px;
+      }
+
+      .two-column p,
+      .two-column li {
+        line-height: 1.8;
+        color: #6d5c67;
+        font-size: 1.02em;
+      }
+
+      .two-column ul {
+        padding-left: 20px;
+      }
+
+      .two-column li {
+        margin-bottom: 10px;
+      }
+
+      .full-image {
+        width: 100%;
+        display: block;
+        margin: 34px auto 0;
+        border-radius: 14px;
+      }
+
+      .image-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 34px;
+      }
+
+      .image-grid img {
+        width: 100%;
+        display: block;
+        border-radius: 14px;
+      }
+
+      .quote-block {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 28px 0 8px;
+        text-align: center;
+      }
+
+      .quote-block p {
+        font-size: 1.35em;
+        line-height: 1.7;
+        color: #c6428f;
+      }
+
+      .youtube-section {
+        margin-top: 85px;
+      }
+
+      .youtube-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 30px;
+      }
+
+      .video-card {
+        background: #fffafc;
+        border: 1px solid #f3d6e6;
+        border-radius: 16px;
+        overflow: hidden;
+      }
+
+      .video-card iframe {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        border: none;
+        display: block;
+      }
+
+      .video-info {
+        padding: 16px;
+      }
+
+      .video-info h3 {
+        color: #d14f9c;
+        font-size: 1.05em;
+        margin-bottom: 8px;
+      }
+
+      .video-info p {
+        color: #6d5c67;
+        line-height: 1.6;
+        font-size: 0.95em;
+      }
+
+      footer {
+        background-color: #d14f9c;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 70px;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      @media (max-width: 900px) {
+        .two-column,
+        .image-grid,
+        .youtube-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .container {
+          padding: 16px;
+        }
+
+        nav ul li {
+          display: block;
+          margin-right: 0;
+          margin-bottom: 8px;
+        }
+
+        .dropdown-content {
+          position: static;
+          display: block;
+          box-shadow: none;
+          background: transparent;
+          border-radius: 0;
+          min-width: unset;
+          margin-left: 10px;
+        }
+
+        .dropdown-content a {
+          padding: 8px 10px;
+          background: transparent;
+        }
+
+        .hero {
+          padding: 36px 0 18px;
+        }
+
+        .hero h1 {
+          font-size: 2.2em;
+        }
+
+        .section {
+          margin-top: 60px;
+        }
+
+        .section h2,
+        .two-column h2 {
+          font-size: 1.65em;
+        }
+
+        .quote-block p {
+          font-size: 1.15em;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+
+          <li class="dropdown">
+            <a href="work.index">Projects</a>
+            <ul class="dropdown-content">
+              <li><a href="videography.html">Videography</a></li>
+              <li><a href="branding.html">Branding</a></li>
+              <li><a href="web-app.html">Web and App</a></li>
+              <li><a href="graphic-design.html">Graphic Design</a></li>
+            </ul>
+          </li>
+
+          <li><a href="aboutme.html">About Me</a></li>
+          <li><a href="contactme.html">Contact Me</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="container">
+      <section class="hero">
+        <p class="eyebrow">Branding / Rebrand Case Study</p>
+        <h1>Annabelle Rebrand</h1>
+        <p>
+          A rebrand concept for Annabelle Cosmetics focused on refining the brand’s
+          visual identity, clarifying its messaging, and creating a more cohesive
+          system across logo, packaging, and campaign design.
+        </p>
+
+        <div class="meta-row">
+          <span>Brand Identity</span>
+          <span>Logo Redesign</span>
+          <span>Packaging</span>
+          <span>Campaign Design</span>
+          <span>Social Strategy</span>
+        </div>
+
+        <img src="longmock2.jpeg" alt="Annabelle rebrand presentation overview" class="hero-image">
+      </section>
+    </div>
+
+    <div class="container section">
+      <div class="section-inner">
+        <h2>Project Overview</h2>
+        <div class="divider"></div>
+
+        <p>
+          Annabelle is a Canadian drugstore cosmetics brand known for colourful,
+          affordable, cruelty-free beauty products with everyday appeal. This project
+          explored how the brand could feel more distinctive, polished, and current
+          while still staying accessible to its audience.
+        </p>
+
+        <p>
+          The goal of the rebrand was not to completely reinvent Annabelle, but to
+          strengthen what already made it recognizable and give it a clearer visual
+          identity across multiple touchpoints.
+        </p>
+
+        <div class="role-block">
+          <p>
+            <strong>My role:</strong> I developed the rebrand concept, designed the
+            updated logo, defined the colour and typography direction, created mockups,
+            and built the campaign idea and supporting visual applications.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container section">
+      <div class="two-column">
+        <div>
+          <h2>The Challenge</h2>
+          <div class="divider"></div>
+          <p>
+            The existing brand had recognition and accessibility, but it lacked a
+            stronger sense of identity and consistency. I wanted to create a system
+            that felt more confident and memorable while keeping the brand approachable.
+          </p>
+          <p>
+            I also needed to show how a rebrand for an existing company can stay aligned
+            with the brand’s core values while still reflecting my own design decisions
+            and creative direction.
+          </p>
+        </div>
+
+        <div>
+          <h2>Requirements</h2>
+          <div class="divider"></div>
+          <ul>
+            <li>Create a stronger, clearer visual identity.</li>
+            <li>Keep the brand affordable, friendly, and everyday-focused.</li>
+            <li>Define a distinct concept and audience direction.</li>
+            <li>Apply the system across multiple brand touchpoints.</li>
+            <li>Show my unique contribution while still respecting the existing brand.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container section">
+      <div class="quote-block">
+        <p>“Fundamentally Flawless”</p>
+      </div>
+    </div>
+
+    <div class="container section">
+      <div class="section-inner">
+        <h2>Concept Direction</h2>
+        <div class="divider"></div>
+
+        <p>
+          The big idea behind the rebrand was <em>Fundamentally Flawless</em>. This
+          direction framed Annabelle as a brand that makes beauty feel easy,
+          approachable, and confidence-building. It focuses on products that are simple
+          to use but still help the user feel polished and put together.
+        </p>
+
+        <p>
+          That concept became the foundation for the visual identity, campaign tone,
+          and brand applications that followed.
+        </p>
+      </div>
+    </div>
+
+    <div class="container section">
+      <div class="section-inner">
+        <h2>Audience and Brand Positioning</h2>
+        <div class="divider"></div>
+
+        <p>
+          The project positioned Annabelle toward younger consumers and everyday makeup
+          users looking for accessible, affordable beauty products that still feel
+          reliable and expressive. This helped shape a design direction that was both
+          playful and polished.
+        </p>
+
+        <p>
+          I wanted the rebrand to feel current and confident, while keeping the brand’s
+          identity rooted in accessibility and broad appeal.
+        </p>
+      </div>
+
+      <img src="BigLong.jpeg" alt="Annabelle audience and brand strategy" class="full-image">
+    </div>
+
+    <div class="container section">
+      <div class="section-inner">
+        <h2>Logo Redesign</h2>
+        <div class="divider"></div>
+
+        <p>
+          The logo redesign aimed to give Annabelle a stronger visual presence while
+          remaining versatile across products and platforms. I wanted the updated mark
+          to feel more distinctive, confident, and recognizable without losing the
+          brand’s accessible character.
+        </p>
+
+        <p class="highlight">
+          Bold looks effortless.
+        </p>
+      </div>
+
+      <img src="logo.jpeg" alt="Annabelle logo redesign before and after" class="full-image">
+    </div>
+
+    <div class="container section">
+      <div class="section-inner">
+        <h2>Colour and Typography</h2>
+        <div class="divider"></div>
+
+        <p>
+          The visual system uses bright, approachable colour with a more unified and
+          intentional structure. The palette helps the brand feel fun and youthful,
+          while the typography adds clarity and consistency across applications.
+        </p>
+
+        <p>
+          This part of the project was important because it translated the brand idea
+          into a system that could be used repeatedly, not just in one isolated design.
+        </p>
+      </div>
+
+      <img src="colour+type.jpeg" alt="Annabelle colour palette and typography system" class="full-image">
+    </div>
+
+    <div class="container section">
+      <div class="section-inner">
+        <h2>Brand Applications</h2>
+        <div class="divider"></div>
+
+        <p>
+          I applied the rebrand across mockups to show how the identity could work in
+          packaging and promotional contexts. These applications demonstrate how the
+          system maintains a consistent look while adapting to different formats.
+        </p>
+
+        <p>
+          This helped show the project as a complete identity system rather than only a
+          logo exercise.
+        </p>
+      </div>
+        <img src="annabelle.jpeg" alt="Annabelle packaging mockup" class="full-image">
+    </div>
+
+    <div class="container section">
+      <div class="section-inner">
+        <h2>Campaign Direction</h2>
+        <div class="divider"></div>
+
+        <p>
+          To extend the identity beyond packaging, I created the campaign direction
+          <em>Flawless in 5</em>. The idea was built for social platforms and focused on
+          short, relatable beauty content that feels fast, authentic, and easy to engage with.
+        </p>
+
+        <p>
+          This campaign showed how the brand could live in a more contemporary digital
+          space while staying aligned with its audience and overall identity.
+        </p>
+      </div>
+
+      <img src="flawlessin5.jpeg" alt="Annabelle Flawless in 5 social campaign" class="full-image">
+    </div>
+
+    <div class="container section">
+      <div class="section-inner">
+        <h2>Process</h2>
+        <div class="divider"></div>
+
+        <p>
+          The project moved from written analysis and concept development into sketching,
+          digital refinement, and final mockup creation. This process helped me connect
+          strategy with execution and make sure the visuals were supported by a clear idea.
+        </p>
+
+        <p>
+          It also allowed me to show not only the final rebrand, but how that rebrand was
+          built through research, concept thinking, and application.
+        </p>
+      </div>
+
+      <div class="image-grid">
+        <img src="DesignProcess.jpeg" alt="Annabelle design process sketches">
+        <img src="DesignProcess2.jpeg" alt="Annabelle digital process and layouts">
+      </div>
+    </div>
+
+    <div class="container section">
+      <div class="section-inner">
+        <h2>Outcome</h2>
+        <div class="divider"></div>
+
+        <p>
+          The final outcome is a more cohesive and recognizable rebrand that gives
+          Annabelle a clearer voice and stronger visual identity. It demonstrates my
+          ability to work with an existing brand, identify areas for improvement, and
+          build a system that is both strategic and visually polished.
+        </p>
+
+        <p>
+          More broadly, this project shows the kind of work I want to continue doing:
+          branding that combines analysis, visual storytelling, and flexible design systems.
+        </p>
+      </div>
+    </div>
+
+    <div class="container section youtube-section">
+      <div class="section-inner">
+        <h2>Video Links</h2>
+        <div class="divider"></div>
+
+        <p>
+          Additional video content related to the project.
+        </p>
+      </div>
+
+      <div class="youtube-grid">
+        <div class="video-card">
+          <iframe
+            src="https://www.youtube.com/embed/d2RdKDvcIgI"
+            title="Annabelle Video 1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+          <div class="video-info">
+            <h3>Video 1</h3>
+            <p>Add your description here.</p>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <iframe
+            src="https://www.youtube.com/embed/OO4MMa7clm8"
+            title="Annabelle Video 2"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+          <div class="video-info">
+            <h3>Video 2</h3>
+            <p>Add your description here.</p>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <iframe
+            src="https://www.youtube.com/embed/0SYvJt94Oxo"
+            title="Annabelle Video 3"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+          <div class="video-info">
+            <h3>Video 3</h3>
+            <p>Add your description here.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>@ 2026 Sara Truffi - All Rights Reserved</footer>
+  </body>
+</html>
